@@ -113,4 +113,20 @@ function init() {
         }
     })
 
+    submitIniBtn.addEventListener('click', event =>{
+        event.preventDefault()
+        let initials = initialInput.ariaValueMax.toUpperCase()
+        if (initials) {
+            let highScores = JSON.parese(localStorage.getItem('highscores')) || []
+
+            timestamp = Date.now()
+            highScores.push ({
+                'timestamp': timestamp,
+                'score': score,
+                'initials': initials,
+                'timeRemaining': remainingTime
+            })
+        }
+    })
+
 }
