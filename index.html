@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Quiz</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="shortcut icon" href="./assets/image/check.svg" type="image/svg">
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a id="view_highscore_link" href="#">View Highscores</a>
+        <span id="time">Time: <span id="time_display">0</span></span>
+    </header>
 
-  <body>
+    <main>
+        <section id="starting_page" class="page">
+            <h1>Coding Quiz Challenge</h1>
+
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            
+            <button id="start_quiz_button">Start Quiz</button>
+        </section>
+        
 
 
-    <div class="highscores"><a href="highscores.html">View Highscores</a></div>
-    <div class="timer">Time: <span id="time">0</span></div>
+        <section id="question_page" class="page hidden">
 
+            <h2 id="question_display"></h2>
 
+            <div id="answer_list"></div>
 
-    <div class="wrapper">
-      <div id="start-screen" class="start">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penalize your
-          score/time by ten seconds!
-        </p>
-        <button id="start-quiz-btn">Start Quiz</button>
-      </div>
+            <div id="feedback">Correct!</div>
+        </section>
+        <div id="question_numbers_box"></div>
 
-      <div id="questions-page" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
-      </div>
-
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
         <br>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
 
-      <div id="feedback" class="feedback hide"></div>
-    </div>
+        <section id="get_name_page" class="page hidden">
+            <h2>All done!</h2>
 
-    
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/logic.js"></script>
-  </body>
+            <p>Your final score is <span id="score_display"></span>.</p>
+
+            <br>
+
+            <p>Enter initials: 
+                <input type="text" name="initials" id="initials_input">
+                <button id="submit_initials_button">Submit</button>
+            </p>
+        </section>
+
+        <section id="highscore_page" class="page hidden">
+            <h2>Highscores</h2>
+
+            <div id="highscore_list"></div>
+
+            <button id="go_to_starting_page_button">Go Back</button>
+            <button id="clear_highscores_button">Clear Highscores</button>
+        </section>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
 </html>
