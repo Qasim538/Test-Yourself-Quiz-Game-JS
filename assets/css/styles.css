@@ -1,16 +1,57 @@
+/* used to controle the primary layout of the website */
+html {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial;
-  font-size: 120%;
+  min-height: 100%;
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
 }
 
-a {
-  color: #563d7c;
-  text-decoration: none;
-  transition: color 0.1s;
+body > * {
+  flex: 0 0 auto;
+  width: 100%;
 }
 
-a:hover {
-  color: #8570a5;
+main {
+  flex: 1 0 auto;
+}
+/* used to strip out all browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+input, select, option, optgroup, textarea, button, pre, code {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.hidden {
+  display: none !important;
 }
 
 button {
@@ -25,64 +66,133 @@ button {
   border: 0;
   transition: background-color 0.1s;
 }
-
+.answer {
+  width: 400px;
+  margin: 10px  0 !important ;
+}
 button:hover {
   background-color: #8570a5;
 }
 
-.choices button {
-  display: block;
+
+a {
+  color: black;
 }
 
-input[type="text"] {
-  font-size: 100%;
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
-ol {
-  padding-left: 0px;
-  max-height: 400px;
-  overflow: auto;
+main {
+  margin: auto;
+  max-width: 625px;
+  padding: 0.5rem;
 }
 
-li {
-  padding: 5px;
-  list-style: decimal inside none;
+main section h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
-li:nth-child(odd) {
-  background-color: #f3edfc;
+main section h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
-.wrapper {
-  margin: 100px auto 0 auto;
-  max-width: 600px;
+main section p {
+  font-size: 1.25rem;
+  margin: 1rem 0;
 }
 
-.hide {
-  display: none;
+main section hr {
+  margin: 0.5rem 0;
 }
 
-.start {
+main #starting_page h1, main #starting_page p {
   text-align: center;
 }
 
-.scores {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+main #starting_page #start_quiz_button {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-.feedback {
-  font-style: italic;
-  font-size: 120%;
-  margin-top: 20px;
-  padding-top: 10px;
-  color: gray;
-  border-top: 2px solid #ccc;
+main #question_numbers_box {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
-.timer {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+main #question_numbers_box span {
+  background-color: #3d77b9;
+  font-size: 16px;
+  color: white;
+  width: 30px;
+  padding: 6px;
+  text-align: center;
+  transition: 0.25s;
+  margin: 4px;
+  border-radius: 50px;
 }
+
+main #question_numbers_box span.correct {
+  background-color: #6ab93d;
+}
+
+main #question_numbers_box span.wrong {
+  background-color: #b93d47;
+}
+
+main #question_page #answer_list {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+main #question_page #answer_list button {
+  margin: 0.1rem;
+}
+
+main #question_page #feedback {
+  font-weight: 600;
+}
+
+main #get_name_page #score_display {
+  font-weight: 600;
+}
+
+main #get_name_page #initials_input {
+  margin-right: 1rem;
+  border: 0px;
+  border-bottom: 1px solid black;
+  padding: 0 0.5rem;
+  text-align: center;
+  width: 5rem;
+}
+
+main #get_name_page #initials_input:focus {
+  border-bottom: 2px solid #0f92fd;
+  outline: none;
+}
+
+main #highscore_page #highscore_list {
+  border: 2px solid #0d6fc0;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+}
+
+main #highscore_page #highscore_list div {
+  padding: 0.2rem 0.5rem;
+}
+
+main #highscore_page #highscore_list div:nth-child(odd) {
+  background-color: rgba(31, 74, 109, 0.25);
+}
+
+main #highscore_page #highscore_list div:nth-child(even) {
+  background-color: rgba(31, 74, 109, 0.1);
+}
+
