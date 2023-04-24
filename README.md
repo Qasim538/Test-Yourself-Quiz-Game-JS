@@ -35,6 +35,9 @@ I have added a MIT license. This is free website and anyone can use it.
 Here is the link to repository:
 https://github.com/Qasim538/Test-Yourself-Quiz-Game-JS
 
+ https://qasim538.github.io/Test-Yourself-Quiz-Game-JS/
+ 
+
 
 
 ## Links to my Github
