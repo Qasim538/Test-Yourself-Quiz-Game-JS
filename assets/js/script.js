@@ -14,7 +14,7 @@ var submitInitialsButton = document.getElementById('submit_initials_button')
 var highscoreList = document.getElementById('highscore_list')
 var goToStartingPageButton = document.getElementById('go_to_starting_page_button')
 var clearHighscoresButton = document.getElementById('clear_highscores_button')
-
+var play = document.getElementsByClassName('.play')
 // Questions with answers
 
 const questions = [
@@ -63,7 +63,7 @@ const questions = [
 
 // score tracking variables
 
-const startingTime = questions.length * 8 
+const startingTime = questions.length * 15
 const timePenalty = 10 
 var remainingTime 
 var timer 
@@ -140,7 +140,7 @@ function init() {
     })
     
     // display the starting page
-    
+
     displayStartingPage()
 }
 
@@ -216,15 +216,31 @@ function displayNextQuestion() {
             if (answer == correctAnswer)
                 button.classList.add('correct')
             button.textContent = `${i + 1}. ${answer}`
-            answersList.appendChild(button)
+            answersList.appendChild(button)     
         }
 
         nextQuestionIndex++
+
     } else {
         clearInterval(timer)
         displayGetNamePage()
     }
-}
+
+    function playCorrect() {
+        let audio = new Audio("assets/sfx/correct.wav");
+        audio.play()
+       }
+       play.addEventListener("click", playCorrect);
+
+    function playInCorrect() {
+        let audio = new Audio("assets/sfx/incorrect.wav");
+        audio.play()
+       }
+       play.addEventListener("click", playInCorrect);
+    }
+
+    
+
 
 /** Display the get name page. */
 function displayGetNamePage() {
@@ -272,6 +288,8 @@ function randomizeArray(array) {
 
     return output
 }
+
+
 
 /** Start the count down timer */
 
